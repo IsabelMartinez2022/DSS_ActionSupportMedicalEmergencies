@@ -23,3 +23,106 @@
 
 import objects.MedicalEmergency						
 
+rule "Emergency Response 1"
+dialect "java"
+when
+    $emergency : MedicalEmergency(conscious == "no",
+                                  breathing == "no",
+                                  bleeding == "no")
+then
+    System.out.println("Call 112");
+    System.out.println("Start CPR");
+    System.out.println("Use AED (Automated External Defibrillator)");
+end
+
+rule "Emergency Response 2"
+dialect "java"
+when
+    $emergency : MedicalEmergency(conscious == "no",
+                                  breathing == "no",
+                                  bleeding == "no",
+                                  electric_shock == "yes")                                    )
+then
+    System.out.println("Turn off the power source");
+    System.out.println("Do not cover burnts");
+    System.out.println("Call 112");
+    System.out.println("Start CPR");
+    System.out.println("Use AED (Automated External Defibrillator)");
+end
+
+rule "Emergency Response 3"
+dialect "java"
+when
+    $emergency : MedicalEmergency(conscious == "no",
+                                  breathing == "no",
+                                  bleeding == "no",
+                                  electric_shock == "yes",
+                                  major_trauma == "yes",
+                                  car_accident == "no")
+then
+    System.out.println("Call 112");
+    System.out.println("Do not move the person");
+    System.out.println("Start CPR");
+    System.out.println("Use AED (Automated External Defibrillator)");
+end
+
+rule "Emergency Response 4"
+dialect "java"
+when
+    $emergency : MedicalEmergency(conscious == "no",
+                                  breathing == "no",
+                                  bleeding == "yes",
+                                  major_trauma == "yes",
+                                  car_accident == "no")
+then
+    System.out.println("Call 112");
+    System.out.println("Apply pressure to stop bleeding");
+    System.out.println("Do not move the person");
+    System.out.println("Start CPR");
+    System.out.println("Use AED (Automated External Defibrillator)");
+end
+
+rule "Emergency Response 5"
+dialect "java"
+when
+    $emergency : MedicalEmergency(conscious == "no",
+                                  breathing == "yes",
+                                  bleeding == "no",
+                                  major_trauma == "yes",
+                                  car_accident == "yes")
+then
+    System.out.println("Protect the person");
+    System.out.println("Call 112");
+    System.out.println("Do not move the person or remove helmet, protect from cold or heat, don't give food or drinks");
+end
+
+rule "Emergency Response 5"
+dialect "java"
+when
+    $emergency : MedicalEmergency(conscious == "no",
+                                  breathing == "yes",
+                                  bleeding == "no",
+                                  major_trauma == "yes",
+                                  car_accident == "yes")
+then
+    System.out.println("Protect the person");
+    System.out.println("Call 112");
+    System.out.println("Do not move the person or remove helmet, protect from cold or heat, don't give food or drinks");
+end
+
+rule "Emergency Response 6"
+dialect "java"
+when
+    $emergency : MedicalEmergency(conscious == "no",
+                                  breathing == "no",
+                                  bleeding == "no",
+                                  electric_shock == "no",
+                                  major_trauma == "yes",
+                                  car_accident == "yes")
+then
+    System.out.println("Protect the person");
+    System.out.println("Call 112");
+    System.out.println("Do not move the person or remove helmet, protect from cold or heat, don't give food or drinks");
+    System.out.println("Start CPR");
+    System.out.println("Use AED (Automated External Defibrillator)");
+end
