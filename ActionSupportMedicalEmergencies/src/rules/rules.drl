@@ -28,7 +28,10 @@ dialect "java"
 when
     $emergency : MedicalEmergency(conscious == "no",
                                   breathing == "no",
-                                  bleeding == "no")
+                                  bleeding == "no",
+                                  electric_shock == "no",
+                                  major_trauma == "no",
+                                  car_accident == "no")
 then
     System.out.println("Call 112");
     System.out.println("Start CPR");
