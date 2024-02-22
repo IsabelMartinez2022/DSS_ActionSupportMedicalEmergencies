@@ -154,6 +154,14 @@ public class MedicalEmergency {
         this.difficulty_breathing = difficulty_breathing;
     }
     
+    @Override
+    public String toString() {
+        return "MedicalEmergency [conscious=" + conscious + ", dizzy=" + dizzy + ", breathing=" + breathing
+		+ ", bleeding=" + bleeding + ", emit_words=" + emit_words + ", chest_pain=" + chest_pain + ", cough="
+		+ cough + ", seizure=" + seizure + ", possible_poisoning=" + possible_poisoning + ", electric_shock="
+		+ electric_shock + ", major_trauma=" + major_trauma + ", car_accident=" + car_accident + ", vomit="
+		+ vomit + ", difficulty_breathing=" + difficulty_breathing + "]";
+    }
 /*
     @Override
     public int hashCode() {
