@@ -129,3 +129,83 @@ then
     System.out.println("Start CPR");
     System.out.println("Use AED (Automated External Defibrillator)");
 end
+
+rule "Emergency Response 7"
+dialect "java"
+when
+    $emergency : MedicalEmergency(conscious == "no",
+                                  breathing == "no",
+                                  bleeding == "yes",
+                                  major_trauma == "yes",
+                                  car_accident == "yes")
+then
+    System.out.println("Protect the person");
+    System.out.println("Call 112");
+    System.out.println("Do not move the person or remove helmet, protect from cold or heat, don't give food or drinks");
+    System.out.println("Start CPR");
+    System.out.println("Use AED (Automated External Defibrillator)");
+end
+
+rule "Emergency Response 8"
+dialect "java"
+when
+    $emergency : MedicalEmergency(conscious == "yes",
+                                  dizzy == "no",
+                                  emit_words == "yes",
+                                  trying_to_cough == "yes",
+                                  difficulty_breathing == "yes")
+then
+    System.out.println("Encourage the person to cough");
+end
+
+rule "Emergency Response 9"
+dialect "java"
+when
+    $emergency : MedicalEmergency(conscious == "yes",
+                                  dizzy == "no",
+                                  emit_words == "no",
+                                  difficulty_breathing == "yes")
+then
+    System.out.println("Do the Heimlich maneuver");
+end
+
+rule "Emergency Response 10"
+dialect "java"
+when
+    $emergency : MedicalEmergency(chest_pain == "yes")
+
+then
+    System.out.println("Call 112");
+    System.out.println("Look for medication");
+end
+
+rule "Emergency Response 11"
+dialect "java"
+when
+    $emergency : MedicalEmergency(conscious == "no",
+                                  breathing == "yes",
+                                  bleeding == "no",
+                                  mayor_traume == "no",
+                                  vomit == "no")
+
+then
+    System.out.println("Secure the area");
+    System.out.println("Put the legs up");
+    System.out.println("Loosen tight clothing");
+    System.out.println("Call 112 if the person is not recovered after the previous steps");
+end
+
+rule "Emergency Response 12"
+dialect "java"
+when
+    $emergency : MedicalEmergency(conscious == "no",
+                                  breathing == "yes",
+                                  bleeding == "no",
+                                  mayor_traume == "no",
+                                  vomit == "yes")
+
+then
+    System.out.println("Secure the area");
+    System.out.println("Put the person in the recovery position");
+    System.out.println("Call 112 if the person is not recovered after the previous steps");
+end
