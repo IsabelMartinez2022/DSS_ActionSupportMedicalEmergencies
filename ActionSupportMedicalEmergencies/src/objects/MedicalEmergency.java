@@ -23,7 +23,12 @@ public class MedicalEmergency {
     private String car_accident;
     private String vomit;
     private String difficulty_breathing;
-
+    //para los test
+    private boolean turnOffPowerSourcePrinted;
+    private boolean doNotCoverBurntsPrinted;
+    private boolean call112Printed;
+    private boolean startCPRPrinted;
+    private boolean useAEDPrinted;
     
     public MedicalEmergency(String conscious, String dizzy, String breathing, String bleeding, String emit_words, String chest_pain, String cough, String seizure, String possible_poisoning, String electric_shock, String major_trauma, String car_accident, String vomit, String difficulty_breathing) {
         this.conscious = conscious;
@@ -152,6 +157,47 @@ public class MedicalEmergency {
 
     public void setDifficulty_breathing(String difficulty_breathing) {
         this.difficulty_breathing = difficulty_breathing;
+    }
+    
+    //para los test
+    public boolean isTurnOffPowerSourcePrinted() {
+        return turnOffPowerSourcePrinted;
+    }
+
+    public void setTurnOffPowerSourcePrinted(boolean turnOffPowerSourcePrinted) {
+        this.turnOffPowerSourcePrinted = turnOffPowerSourcePrinted;
+    }
+
+    public boolean isDoNotCoverBurntsPrinted() {
+        return doNotCoverBurntsPrinted;
+    }
+
+    public void setDoNotCoverBurntsPrinted(boolean doNotCoverBurntsPrinted) {
+        this.doNotCoverBurntsPrinted = doNotCoverBurntsPrinted;
+    }
+
+    public boolean isCall112Printed() {
+        return call112Printed;
+    }
+
+    public void setCall112Printed(boolean call112Printed) {
+        this.call112Printed = call112Printed;
+    }
+
+    public boolean isStartCPRPrinted() {
+        return startCPRPrinted;
+    }
+
+    public void setStartCPRPrinted(boolean startCPRPrinted) {
+        this.startCPRPrinted = startCPRPrinted;
+    }
+
+    public boolean isUseAEDPrinted() {
+        return useAEDPrinted;
+    }
+
+    public void setUseAEDPrinted(boolean useAEDPrinted) {
+        this.useAEDPrinted = useAEDPrinted;
     }
     
     @Override
