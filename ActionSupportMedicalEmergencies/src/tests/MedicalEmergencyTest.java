@@ -5,7 +5,7 @@
  */
 package tests;
 
-import objects.MedicalEmergency;
+import objects.Person;
 import org.junit.Test; //para usar JUnit hay que añadir la libreria a mano
 import org.kie.api.KieServices;
 import org.kie.api.runtime.KieContainer;
@@ -24,7 +24,7 @@ public class MedicalEmergencyTest {
     public void testEmergencyResponse1Rule() {
         KieSession kSession = getKieSession();
 
-        MedicalEmergency emergency = new MedicalEmergency("no", null, "no", "no", null, null, null, null, null, null, "no", "no", null, null);
+        Person emergency = new Person("no", null, "no", "no", null, null, null, null, null, null, "no", "no", null, null);
         kSession.insert(emergency);
         kSession.fireAllRules();
 
@@ -39,7 +39,7 @@ public class MedicalEmergencyTest {
     public void testEmergencyResponse2Rule() {
         KieSession kSession = getKieSession();
 
-        MedicalEmergency emergency = new MedicalEmergency("no", null, "no", "no", null, null, null, null, null, "yes", "no", "no", null, null);
+        Person emergency = new Person("no", null, "no", "no", null, null, null, null, null, "yes", "no", "no", null, null);
         kSession.insert(emergency);
         kSession.fireAllRules();
 

@@ -4,7 +4,7 @@
  */
 package application;
 
-import objects.MedicalEmergency;
+import objects.Person;
 import org.kie.api.KieServices;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
@@ -22,7 +22,9 @@ public class ActionSupportMedicalEmergency {
     }
 
     public static void execute(KieContainer kc) {
-        KieSession ksession = kc.newKieSession("ATMKS");
-        MedicalEmergency me1 = new MedicalEmergency("no", "unknown", "no", "no", "unknown", "unknown", "unknown", "unknown", "unknown", "no", "no", "no", "unknown", "unknown");
+        KieSession ksession = kc.newKieSession("MedicalEmergencyKS");
+        Person me1 = new Person("no", "unknown", "no", "no", "unknown", "unknown", "unknown", "unknown", "unknown", "no", "no", "no", "unknown", "unknown");
+        ksession.fireAllRules();
+        ksession.dispose();
     }
 }

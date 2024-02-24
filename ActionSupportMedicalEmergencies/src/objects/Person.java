@@ -8,7 +8,7 @@ package objects;
  *
  * @author isama
  */
-public class MedicalEmergency {
+public class Person {
     private String conscious;
     private String dizzy;
     private String breathing;
@@ -23,6 +23,7 @@ public class MedicalEmergency {
     private String car_accident;
     private String vomit;
     private String difficulty_breathing;
+    private String protocol;
     //para los test
     private boolean turnOffPowerSourcePrinted;
     private boolean doNotCoverBurntsPrinted;
@@ -30,7 +31,7 @@ public class MedicalEmergency {
     private boolean startCPRPrinted;
     private boolean useAEDPrinted;
     
-    public MedicalEmergency(String conscious, String dizzy, String breathing, String bleeding, String emit_words, String chest_pain, String cough, String seizure, String possible_poisoning, String electric_shock, String major_trauma, String car_accident, String vomit, String difficulty_breathing) {
+    public Person(String conscious, String dizzy, String breathing, String bleeding, String emit_words, String chest_pain, String cough, String seizure, String possible_poisoning, String electric_shock, String major_trauma, String car_accident, String vomit, String difficulty_breathing) {
         this.conscious = conscious;
         this.dizzy = dizzy;
         this.breathing = breathing;
@@ -47,6 +48,14 @@ public class MedicalEmergency {
         this.difficulty_breathing = difficulty_breathing;
     }
 
+     public String getProtocol() {
+        return protocol;
+    }
+    
+     public void setProtocol(String protocol){
+         this.protocol=protocol;
+     }
+     
     public String getConscious() {
         return conscious;
     }
