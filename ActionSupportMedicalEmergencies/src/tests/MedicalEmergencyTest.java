@@ -6,12 +6,12 @@
 package tests;
 
 import objects.Person;
-import org.junit.Test; //para usar JUnit hay que añadir la libreria a mano
+import org.junit.jupiter.api.*;
+import static org.junit.jupiter.api.Assertions.*;
 import org.kie.api.KieServices;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 
-import static org.junit.Assert.assertTrue;
 
 /**
  *
@@ -19,8 +19,52 @@ import static org.junit.Assert.assertTrue;
  */
 public class MedicalEmergencyTest {
  
-    //con métodos booleanos
+    /*
+    LEER
+    Construimos test por cada response leed tambien lo que hace el metoodo executeRules bla bla
+    Una vez esten hechas todas las Response deberiamos hacer un super test que comprueba como intereactuan todas las
+    responses a la vez.
+    */
+   @Test
+    public void testEmergencyResponse1() {
+        Person person = new Person("no", "unknown", "no", "no", "unknown", "unknown", "unknown", "unknown", "unknown", "no", "no", "no", "unknown", "unknown");
+
+        executeRulesAndAssertProtocol(person, "Call 112, start CPR and AED");
+    }
+
     @Test
+    public void testEmergencyResponse2() {
+        // TO  DO para response 2
+        //Person person = new Person("no", "no", "no", "yes", "no", "no", "no", "no", "no", "yes", "no", "no", "no", "no");
+
+        //executeRulesAndAssertProtocol(person, "Turn off power source, do not cover the burns, call 112, start CPR, use AED");
+    }
+
+    /**
+    * La función executeRulesAndAssertProtocol es un método de ayuda en Java utilizado
+    * para ejecutar reglas de Drools y verificar el protocolo resultante en pruebas unitarias.
+    * Toma una instancia de la clase Person con síntomas específicos y el protocolo esperado como parámetros. 
+    * El método crea una sesión de reglas(ksession), para esta sesión necesita el contenedor que a su vez
+    * necesita el servicio si lo ves esta en orden. Finalmente con asserEquals se comprueba lo esperado frente a lo
+    * que tenemos
+    *
+    * @param person          Instancia de la clase Person con síntomas específicos.
+    * @param expectedProtocol Protocolo esperado que se compara con el protocolo resultante.
+    */
+    private void executeRulesAndAssertProtocol(Person person, String expectedProtocol) {
+        KieServices ks = KieServices.Factory.get();
+        KieContainer kc = ks.getKieClasspathContainer();
+        KieSession ksession = kc.newKieSession("rulesSession");
+
+        ksession.insert(person);
+        ksession.fireAllRules();
+
+        assertEquals(expectedProtocol, person.getProtocol());
+        ksession.dispose();
+    }
+
+    //con métodos booleanos
+    /*@Test
     public void testEmergencyResponse1Rule() {
         KieSession kSession = getKieSession();
 
@@ -56,7 +100,7 @@ public class MedicalEmergencyTest {
         KieServices ks = KieServices.Factory.get();
         KieContainer kContainer = ks.getKieClasspathContainer();
         return kContainer.newKieSession("ksession-rules");
-    }
+    }*/
     
 /*para versiones de Drools anteriores a Drools 6
     @Test
