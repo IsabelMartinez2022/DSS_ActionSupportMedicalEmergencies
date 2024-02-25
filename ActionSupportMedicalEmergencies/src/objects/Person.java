@@ -25,11 +25,13 @@ public class Person {
     private String difficulty_breathing;
     private String protocol;
     //para los test
+    /*
     private boolean turnOffPowerSourcePrinted;
     private boolean doNotCoverBurntsPrinted;
     private boolean call112Printed;
     private boolean startCPRPrinted;
     private boolean useAEDPrinted;
+    */
     
     public Person(String conscious, String dizzy, String breathing, String bleeding, String emit_words, String chest_pain, String cough, String seizure, String possible_poisoning, String electric_shock, String major_trauma, String car_accident, String vomit, String difficulty_breathing) {
         this.conscious = conscious;
@@ -169,6 +171,7 @@ public class Person {
     }
     
     //para los test
+    /*
     public boolean isTurnOffPowerSourcePrinted() {
         return turnOffPowerSourcePrinted;
     }
@@ -208,10 +211,10 @@ public class Person {
     public void setUseAEDPrinted(boolean useAEDPrinted) {
         this.useAEDPrinted = useAEDPrinted;
     }
-    
+    */
     @Override
     public String toString() {
-        return "MedicalEmergency [conscious=" + conscious + ", dizzy=" + dizzy + ", breathing=" + breathing
+        return "Person [conscious=" + conscious + ", dizzy=" + dizzy + ", breathing=" + breathing
 		+ ", bleeding=" + bleeding + ", emit_words=" + emit_words + ", chest_pain=" + chest_pain + ", cough="
 		+ cough + ", seizure=" + seizure + ", possible_poisoning=" + possible_poisoning + ", electric_shock="
 		+ electric_shock + ", major_trauma=" + major_trauma + ", car_accident=" + car_accident + ", vomit="
@@ -243,11 +246,5 @@ public class Person {
         return true;
     }
 
-    @Override
-    public String toString() {
-        return "Operation{" + "id_operation=" + id_operation + ", verified=" + verified + ", date_expired=" + date_expired + ", pin=" 
-                + pin + ", tries=" + tries + ", balance=" + balance + ", price=" + price + ", limit=" + limit + ", authorized=" + authorized + '}';
-    }
-    
 */
 }
