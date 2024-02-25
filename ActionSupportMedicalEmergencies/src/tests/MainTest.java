@@ -24,10 +24,51 @@ public class MainTest {
     
     @Test
     public void testEmergencyResponse2() {
-        // TO  DO para response 2
-        //Person person = new Person("no", "no", "no", "yes", "no", "no", "no", "no", "no", "yes", "no", "no", "no", "no");
+        Person person = new Person("no", "unknown", "no", "no", "unknown", "unknown", "unknown", "unknown", "unknown", "yes", "unknown", "unknown", "unknown", "unknown");
 
-        //executeRulesAndAssertProtocol(person, "Turn off power source, do not cover the burns, call 112, start CPR, use AED");
+        executeRulesAndAssertProtocol(person, "Turn off power source, do not cover the burnts, call 112, start CPR, use AED");
+    }
+    
+    @Test
+    public void testEmergencyResponse3() {
+        Person person = new Person("no", "unknown", "no", "no", "unknown", "unknown", "unknown", "unknown", "unknown", "no", "yes", "no", "unknown", "unknown");
+        
+        executeRulesAndAssertProtocol(person, "Call 112, do not move the person, start CPR, use AED");
+    }
+    
+    @Test
+    public void testEmergencyResponse4() {
+        Person person = new Person("no", "unknown", "no", "yes", "unknown", "unknown", "unknown", "unknown", "unknown", "unknown", "yes", "no", "unknown", "unknown");
+        
+        executeRulesAndAssertProtocol(person, "Call 112, apply pressure to stop bleeding, do not move the person, start CPR, use AED");
+    }
+    
+    @Test
+    public void testEmergencyResponse5() {
+        Person person = new Person("no", "unknown", "yes", "no", "unknown", "unknown", "unknown", "unknown", "unknown", "unknown", "yes", "yes", "unknown", "unknown");
+        
+        executeRulesAndAssertProtocol(person, "Protect the person, call 112, do not move the person or remove the helmet, protect from cold or heat and do not give food or drinks");
+    }
+    
+    @Test
+    public void testEmergencyResponse6() {
+        Person person = new Person("no", "unknown", "no", "no", "unknown", "unknown", "unknown", "unknown", "unknown", "no", "yes", "yes", "unknown", "unknown");
+        
+        executeRulesAndAssertProtocol(person, "Protect the person, call 112, do not move the person or remove the helmet, protect from cold or heat and do not give food or drinks");
+    }
+    
+    @Test
+    public void testEmergencyResponse7() {
+        Person person = new Person("no", "unknown", "no", "yes", "unknown", "unknown", "unknown", "unknown", "unknown", "unknown", "yes", "yes", "unknown", "unknown");
+        
+        executeRulesAndAssertProtocol(person, "Protect the person, call 112, do not move the person or remove the helmet, protect from cold or heat and do not give food or drinks, start CPR, use AED");
+    }
+    
+    @Test
+    public void testEmergencyResponse8() {
+        Person person = new Person("yes", "no", "unknown", "unknown", "yes", "unknown", "yes", "unknown", "unknown", "unknown", "unknown", "unknown", "unknown", "yes");
+        
+        executeRulesAndAssertProtocol(person, "Protect the person, call 112, do not move the person or remove the helmet, protect from cold or heat and do not give food or drinks, start CPR and use AED");
     }
 
     /**
