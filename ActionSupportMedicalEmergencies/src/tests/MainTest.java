@@ -6,32 +6,22 @@
 package tests;
 
 import objects.Person;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.kie.api.KieServices;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 
+//@RunWith(JUnitPlatform.class)
+public class MainTest {
 
-/**
- *
- * @author marty
- */
-public class MedicalEmergencyTest {
- 
-    /*
-    LEER
-    Construimos test por cada response leed tambien lo que hace el metoodo executeRules bla bla
-    Una vez esten hechas todas las Response deberiamos hacer un super test que comprueba como intereactuan todas las
-    responses a la vez.
-    */
-   @Test
+    @Test
     public void testEmergencyResponse1() {
         Person person = new Person("no", "unknown", "no", "no", "unknown", "unknown", "unknown", "unknown", "unknown", "no", "no", "no", "unknown", "unknown");
 
         executeRulesAndAssertProtocol(person, "Call 112, start CPR and AED");
     }
-
+    
     @Test
     public void testEmergencyResponse2() {
         // TO  DO para response 2
