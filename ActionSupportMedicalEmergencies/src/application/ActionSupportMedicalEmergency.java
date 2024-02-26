@@ -23,7 +23,7 @@ public class ActionSupportMedicalEmergency {
 
     public static void execute(KieContainer kc) {
         KieSession ksession = kc.newKieSession("MedicalEmergencyKS");
-        Person me1 = new Person("no", "unknown", "no", "no", "unknown", "unknown", "unknown", "unknown", "unknown", "no", "no", "no", "unknown", "unknown");
+        //Person me1 = new Person("no", "unknown", "no", "no", "unknown", "unknown", "unknown", "unknown", "unknown", "no", "no", "no", "unknown", "unknown");
         ksession.fireAllRules();
         ksession.dispose();
     }

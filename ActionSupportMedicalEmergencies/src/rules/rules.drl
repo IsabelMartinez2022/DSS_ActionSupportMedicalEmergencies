@@ -26,12 +26,12 @@ import objects.Person
 rule "Emergency Response 1"
     dialect "java"
     when
-        p1 : Person(conscious == "no",
-                    breathing == "no",
-                    bleeding == "no",
-                    electric_shock == "no",
-                    major_trauma == "no",
-                    car_accident == "no")
+        p1 : Person(conscious == false,
+                    breathing == false,
+                    bleeding == false,
+                    electric_shock == false,
+                    major_trauma == false,
+                    car_accident == false)
     then
         p1.setProtocol("Call 112, start CPR and AED");
 end
@@ -39,10 +39,10 @@ end
 rule "Emergency Response 2"
 dialect "java"
 when
-    p2 : Person(conscious == "no",
-                                  breathing == "no",
-                                  bleeding == "no",
-                                  electric_shock == "yes")                                    )
+    p2 : Person(conscious == false,
+                                  breathing == false,
+                                  bleeding == false,
+                                  electric_shock == true)                                    )
 then
     p2.setProtocol("Turn off power source, do not cover the burnts, call 112, start CPR, use AED");
 end
@@ -50,12 +50,12 @@ end
 rule "Emergency Response 3"
 dialect "java"
 when
-    p3 : Person(conscious == "no",
-                                  breathing == "no",
-                                  bleeding == "no",
-                                  electric_shock == "yes",
-                                  major_trauma == "yes",
-                                  car_accident == "no")
+    p3 : Person(conscious == false,
+                                  breathing == false,
+                                  bleeding == false,
+                                  electric_shock == true,
+                                  major_trauma == true,
+                                  car_accident == false)
 then
     p3.setProtocol("Call 112, do not move the person, start CPR, use AED");
 end
@@ -63,11 +63,11 @@ end
 rule "Emergency Response 4"
 dialect "java"
 when
-    p4 : Person(conscious == "no",
-                                  breathing == "no",
-                                  bleeding == "yes",
-                                  major_trauma == "yes",
-                                  car_accident == "no")
+    p4 : Person(conscious == false,
+                                  breathing == false,
+                                  bleeding == true,
+                                  major_trauma == true,
+                                  car_accident == false)
 then
     p4.setProtocol("Call 112, apply pressure to stop bleeding, do not move the person, start CPR, use AED");
 end
@@ -75,11 +75,11 @@ end
 rule "Emergency Response 5"
 dialect "java"
 when
-    p5 : Person(conscious == "no",
-                                  breathing == "yes",
-                                  bleeding == "no",
-                                  major_trauma == "yes",
-                                  car_accident == "yes")
+    p5 : Person(conscious == false,
+                                  breathing == true,
+                                  bleeding == false,
+                                  major_trauma == true,
+                                  car_accident == true)
 then
     p5.setProtocol("Protect the person, call 112, do not move the person or remove the helmet, protect from cold or heat and do not give food or drinks");
 end
@@ -87,11 +87,11 @@ end
 rule "Emergency Response 6"
 dialect "java"
 when
-    p6 : Person(conscious == "no",
-                                  breathing == "yes",
-                                  bleeding == "no",
-                                  major_trauma == "yes",
-                                  car_accident == "yes")
+    p6 : Person(conscious == false,
+                                  breathing == true,
+                                  bleeding == false,
+                                  major_trauma == true,
+                                  car_accident == true)
 then
     p6.setProtocol("Protect the person, call 112, do not move the person or remove the helmet, protect from cold or heat and do not give food or drinks");
 end
@@ -99,12 +99,12 @@ end
 rule "Emergency Response 7"
 dialect "java"
 when
-    p7 : Person(conscious == "no",
-                                  breathing == "no",
-                                  bleeding == "no",
-                                  electric_shock == "no",
-                                  major_trauma == "yes",
-                                  car_accident == "yes")
+    p7 : Person(conscious == false,
+                                  breathing == false,
+                                  bleeding == false,
+                                  electric_shock == false,
+                                  major_trauma == true,
+                                  car_accident == true)
 then
     p7.setProtocol("Protect the person, call 112, do not move the person or remove the helmet, protect from cold or heat and do not give food or drinks, start CPR, use AED");
 end
@@ -112,11 +112,11 @@ end
 rule "Emergency Response 8"
 dialect "java"
 when
-    p8 : Person(conscious == "no",
-                                  breathing == "no",
-                                  bleeding == "yes",
-                                  major_trauma == "yes",
-                                  car_accident == "yes")
+    p8 : Person(conscious == false,
+                                  breathing == false,
+                                  bleeding == true,
+                                  major_trauma == true,
+                                  car_accident == true)
 then
     p8.setProtocol("Protect the person, call 112, do not move the person or remove the helmet, protect from cold or heat and do not give food or drinks, start CPR and use AED");
 end
@@ -124,30 +124,30 @@ end
 rule "Emergency Response 9"
 dialect "java"
 when
-    p9 : Person(conscious == "yes",
-                                  dizzy == "no",
-                                  emit_words == "yes",
-                                  trying_to_cough == "yes",
-                                  difficulty_breathing == "yes")
+    p9 : Person(conscious == true,
+                                  dizzy == false,
+                                  emit_words == true,
+                                  trying_to_cough == true,
+                                  difficulty_breathing == true)
 then
-    p9.setProtocol("encourage the person to cough");
+    p9.setProtocol("Encourage the person to cough");
 end
 
 rule "Emergency Response 10"
 dialect "java"
 when
-    p10 : Person(conscious == "yes",
-                                  dizzy == "no",
-                                  emit_words == "no",
-                                  difficulty_breathing == "yes")
+    p10 : Person(conscious == true,
+                                  dizzy == false,
+                                  emit_words == false,
+                                  difficulty_breathing == true)
 then
-    p10.setProtocol("do the Heimlich maneuver");
+    p10.setProtocol("Do the Heimlich maneuver");
 end
 
 rule "Emergency Response 11"
 dialect "java"
 when
-    p11 : Person(chest_pain == "yes")
+    p11 : Person(chest_pain == true)
 
 then
     p11.setProtocol("Call 112, look for medication");
@@ -156,11 +156,11 @@ end
 rule "Emergency Response 12"
 dialect "java"
 when
-    p12 : Person(conscious == "no",
-                                  breathing == "yes",
-                                  bleeding == "no",
-                                  mayor_traume == "no",
-                                  vomit == "no")
+    p12 : Person(conscious == false,
+                                  breathing == true,
+                                  bleeding == false,
+                                  mayor_traume == false,
+                                  vomit == false)
 
 then
     p12.setProtocol("Secure the are, put legs up, loosen tight clothing, call 112 if the person is not recovered after the previous stage");
@@ -169,11 +169,11 @@ end
 rule "Emergency Response 13"
 dialect "java"
 when
-    p13 : Person(conscious == "no",
-                                  breathing == "yes",
-                                  bleeding == "no",
-                                  mayor_traume == "no",
-                                  vomit == "yes")
+    p13 : Person(conscious == false,
+                                  breathing == true,
+                                  bleeding == false,
+                                  mayor_traume == false,
+                                  vomit == true)
 then
     p13.setProtocol("Secure the area, put the person in recovery position, call 112 if the person is not recovered after the previous stage");
 end

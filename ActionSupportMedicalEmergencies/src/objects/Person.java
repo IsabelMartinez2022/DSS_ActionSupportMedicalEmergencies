@@ -9,31 +9,24 @@ package objects;
  * @author isama
  */
 public class Person {
-    private String conscious;
-    private String dizzy;
-    private String breathing;
-    private String bleeding;
-    private String emit_words; 
-    private String chest_pain; 
-    private String cough;
-    private String seizure;
-    private String possible_poisoning;
-    private String electric_shock; 
-    private String major_trauma;
-    private String car_accident;
-    private String vomit;
-    private String difficulty_breathing;
-    private String protocol;
-    //para los test
-    /*
-    private boolean turnOffPowerSourcePrinted;
-    private boolean doNotCoverBurntsPrinted;
-    private boolean call112Printed;
-    private boolean startCPRPrinted;
-    private boolean useAEDPrinted;
-    */
+    private boolean conscious;
+    private boolean dizzy;
+    private boolean breathing;
+    private boolean bleeding;
+    private boolean emit_words; 
+    private boolean chest_pain; 
+    private boolean cough;
+    private boolean seizure;
+    private boolean possible_poisoning;
+    private boolean electric_shock; 
+    private boolean major_trauma;
+    private boolean car_accident;
+    private boolean vomit;
+    private boolean difficulty_breathing;
+    private String protocol;// LIST?
+   
     
-    public Person(String conscious, String dizzy, String breathing, String bleeding, String emit_words, String chest_pain, String cough, String seizure, String possible_poisoning, String electric_shock, String major_trauma, String car_accident, String vomit, String difficulty_breathing) {
+    public Person(boolean conscious, boolean dizzy, boolean breathing, boolean bleeding, boolean emit_words, boolean chest_pain, boolean cough, boolean seizure, boolean possible_poisoning, boolean electric_shock, boolean major_trauma, boolean car_accident, boolean vomit, boolean difficulty_breathing) {
         this.conscious = conscious;
         this.dizzy = dizzy;
         this.breathing = breathing;
@@ -50,125 +43,126 @@ public class Person {
         this.difficulty_breathing = difficulty_breathing;
     }
 
-     public String getProtocol() {
-        return protocol;
-    }
-    
-     public void setProtocol(String protocol){
-         this.protocol=protocol;
-     }
-     
-    public String getConscious() {
+    public boolean isConscious() {
         return conscious;
     }
 
-    public String getDizzy() {
+    public boolean isDizzy() {
         return dizzy;
     }
 
-    public String getBreathing() {
+    public boolean isBreathing() {
         return breathing;
     }
 
-    public String getBleeding() {
+    public boolean isBleeding() {
         return bleeding;
     }
 
-    public String getEmit_words() {
+    public boolean isEmit_words() {
         return emit_words;
     }
 
-    public String getChest_pain() {
+    public boolean isChest_pain() {
         return chest_pain;
     }
 
-    public String getCough() {
+    public boolean isCough() {
         return cough;
     }
 
-    public String getSeizure() {
+    public boolean isSeizure() {
         return seizure;
     }
 
-    public String getPossible_poisoning() {
+    public boolean isPossible_poisoning() {
         return possible_poisoning;
     }
 
-    public String getElectric_shock() {
+    public boolean isElectric_shock() {
         return electric_shock;
     }
 
-    public String getMajor_trauma() {
+    public boolean isMajor_trauma() {
         return major_trauma;
     }
 
-    public String getCar_accident() {
+    public boolean isCar_accident() {
         return car_accident;
     }
 
-    public String getVomit() {
+    public boolean isVomit() {
         return vomit;
     }
 
-    public String getDifficulty_breathing() {
+    public boolean isDifficulty_breathing() {
         return difficulty_breathing;
     }
 
-    public void setConscious(String conscious) {
+    public String getProtocol() {
+        return protocol;
+    }
+
+    public void setConscious(boolean conscious) {
         this.conscious = conscious;
     }
 
-    public void setDizzy(String dizzy) {
+    public void setDizzy(boolean dizzy) {
         this.dizzy = dizzy;
     }
 
-    public void setBreathing(String breathing) {
+    public void setBreathing(boolean breathing) {
         this.breathing = breathing;
     }
 
-    public void setBleeding(String bleeding) {
+    public void setBleeding(boolean bleeding) {
         this.bleeding = bleeding;
     }
 
-    public void setEmit_words(String emit_words) {
+    public void setEmit_words(boolean emit_words) {
         this.emit_words = emit_words;
     }
 
-    public void setChest_pain(String chest_pain) {
+    public void setChest_pain(boolean chest_pain) {
         this.chest_pain = chest_pain;
     }
 
-    public void setCough(String cough) {
+    public void setCough(boolean cough) {
         this.cough = cough;
     }
 
-    public void setSeizure(String seizure) {
+    public void setSeizure(boolean seizure) {
         this.seizure = seizure;
     }
 
-    public void setPossible_poisoning(String possible_poisoning) {
+    public void setPossible_poisoning(boolean possible_poisoning) {
         this.possible_poisoning = possible_poisoning;
     }
 
-    public void setElectric_shock(String electric_shock) {
+    public void setElectric_shock(boolean electric_shock) {
         this.electric_shock = electric_shock;
     }
 
-    public void setMajor_trauma(String major_trauma) {
+    public void setMajor_trauma(boolean major_trauma) {
         this.major_trauma = major_trauma;
     }
 
-    public void setCar_accident(String car_accident) {
+    public void setCar_accident(boolean car_accident) {
         this.car_accident = car_accident;
     }
 
-    public void setVomit(String vomit) {
+    public void setVomit(boolean vomit) {
         this.vomit = vomit;
     }
 
-    public void setDifficulty_breathing(String difficulty_breathing) {
+    public void setDifficulty_breathing(boolean difficulty_breathing) {
         this.difficulty_breathing = difficulty_breathing;
     }
+
+    public void setProtocol(String protocol) {
+        this.protocol = protocol;
+    }
+ 
     
     //para los test
     /*
