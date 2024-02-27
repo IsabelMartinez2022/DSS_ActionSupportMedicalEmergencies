@@ -17,79 +17,79 @@ public class MainTest {
 
     @Test
     public void testEmergencyResponse1() {
-        Person person = new Person(false, false, false, false, false, false, false, false, false, false, false, false, false, false);
+        Person person = new Person(false, false, false, false, false, false, false, false, false, false, false, false, false, false, false);
         executeRulesAndAssertProtocol(person, "Call 112, start CPR and AED");
     }
 
     @Test
     public void testEmergencyResponse2() {
-        Person person = new Person(false, false, false, false, false, false, false, false, false, true, false, false, false, false);
+        Person person = new Person(false, false, false, false, false, false, false, false, false, true, false, false, false, false, false);
         executeRulesAndAssertProtocol(person, "Turn off power source, do not cover the burnts, call 112, start CPR, use AED");
     }
 
     @Test
     public void testEmergencyResponse3() {
-        Person person = new Person(false, false, false, false, false, false, false, false, false, false, true, false, false, false);
+        Person person = new Person(false, false, false, false, false, false, false, false, false, false, true, false, false, false, false);
         executeRulesAndAssertProtocol(person, "Call 112, do not move the person, start CPR, use AED");
     }
 
     @Test
     public void testEmergencyResponse4() {
-        Person person = new Person(false, false, true, false, false, false, false, false, false, false, true, false, false, false);
+        Person person = new Person(false, false, true, false, false, false, false, false, false, false, true, false, false, false, false);
         executeRulesAndAssertProtocol(person, "Call 112, apply pressure to stop bleeding, do not move the person, start CPR, use AED");
     }
 
     @Test
     public void testEmergencyResponse5() {
-        Person person = new Person(true, false, true, false, false, false, false, false, false, false, true, true, false, false);
+        Person person = new Person(true, false, true, false, false, false, false, false, false, false, true, true, false, false, false);
         executeRulesAndAssertProtocol(person, "Protect the person, call 112, do not move the person or remove the helmet, protect from cold or heat and do not give food or drinks");
     }
 
     @Test
     public void testEmergencyResponse6() {
-        Person person = new Person(true, false, false, false, false, false, false, false, false, false, true, true, false, false);
+        Person person = new Person(true, false, false, false, false, false, false, false, false, false, true, true, false, false, false);
         executeRulesAndAssertProtocol(person, "Protect the person, call 112, do not move the person or remove the helmet, protect from cold or heat and do not give food or drinks");
     }
 
     @Test
     public void testEmergencyResponse7() {
-        Person person = new Person(true, false, false, true, false, false, false, false, false, false, true, true, false, false);
+        Person person = new Person(true, false, false, true, false, false, false, false, false, false, true, true, false, false, false);
         executeRulesAndAssertProtocol(person, "Protect the person, call 112, do not move the person or remove the helmet, protect from cold or heat and do not give food or drinks, start CPR, use AED");
     }
 
     @Test
     public void testEmergencyResponse8() {
-        Person person = new Person(true, true, false, false, true, false, true, false, false, false, false, false, false, true);
+        Person person = new Person(true, true, false, false, true, false, true, false, false, false, false, false, false, true, false);
         executeRulesAndAssertProtocol(person, "Protect the person, call 112, do not move the person or remove the helmet, protect from cold or heat and do not give food or drinks, start CPR and use AED");
     }
     
     @Test
     public void testEmergencyResponse9() {
-        Person person = new Person(true, false, false, true, true, false, false, false, false, false, false, false, false, false);
+        Person person = new Person(true, false, false, true, true, false, false, false, false, false, false, false, false, false, false);
         executeRulesAndAssertProtocol(person, "Encourage the person to cough");
     }
     
     @Test
     public void testEmergencyResponse10() {
-        Person person = new Person(true, false, false, false, true, false, false, false, false, false, false, false, false, false);
+        Person person = new Person(true, false, false, false, true, false, false, false, false, false, false, false, false, false, false);
         executeRulesAndAssertProtocol(person, "Do the Heimlich maneuver");
     }
 
     @Test
     public void testEmergencyResponse11() {
-        Person person = new Person(false, false, false, false, false, true, false, false, false, false, false, false, false, false);
+        Person person = new Person(false, false, false, false, false, true, false, false, false, false, false, false, false, false, false);
         executeRulesAndAssertProtocol(person, "Call 112, look for medication");
     }
 
     @Test
     public void testEmergencyResponse12() {
-        Person person = new Person(false, false, true, false, false, false, false, false, false, true, false, true, false, false);
+        Person person = new Person(false, false, true, false, false, false, false, false, false, true, false, true, false, false, false);
         executeRulesAndAssertProtocol(person, "Secure the area, put legs up, loosen tight clothing, call 112 if the person is not recovered after the previous stage");
     }
 
     @Test
     public void testEmergencyResponse13() {
-        Person person = new Person(false, false, true, false, false, false, false, false, false, true, false, true, true, false);
+        Person person = new Person(false, false, true, false, false, false, false, false, false, true, false, true, true, false, false);
         executeRulesAndAssertProtocol(person, "Secure the area, put the person in recovery position, call 112 if the person is not recovered after the previous stage");
     }
 

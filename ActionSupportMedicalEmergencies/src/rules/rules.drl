@@ -30,7 +30,7 @@ rule "Emergency Response 1"
                     breathing == false,
                     bleeding == false,
                     electric_shock == false,
-                    major_trauma == false,
+                    major_trauma == true,
                     car_accident == false)
     then
         p1.setProtocol("Call 112, start CPR and AED");
