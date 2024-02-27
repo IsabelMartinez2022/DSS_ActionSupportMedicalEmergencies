@@ -42,7 +42,7 @@ when
     p2 : Person(conscious == false,
                                   breathing == false,
                                   bleeding == false,
-                                  electric_shock == true)                                    )
+                                  electric_shock == true)                                    
 then
     p2.setProtocol("Turn off power source, do not cover the burnts, call 112, start CPR, use AED");
 end
